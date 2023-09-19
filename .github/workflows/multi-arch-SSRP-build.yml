@@ -1,4 +1,4 @@
-name: SSRP Build X86 & aarch64_cortex-a53
+name: SSRP Build
 
 on:
   workflow_dispatch:
