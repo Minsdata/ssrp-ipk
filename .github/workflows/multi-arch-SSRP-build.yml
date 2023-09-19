@@ -1,13 +1,11 @@
-name: Test Build
+name: SSRP Build X86 & aarch64_cortex-a53
 
 on:
-  pull_request:
-    paths-ignore:
-      - '**.md'
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Test ${{ matrix.arch }}
+    name: Build ${{ matrix.arch }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -47,7 +45,7 @@ jobs:
 
       - name: Determine branch name
         run: |
-          BRANCH="${GITHUB_BASE_REF#refs/heads/}"
+          BRANCH="master"
           echo "Building for $BRANCH"
           echo "BRANCH=$BRANCH" >> $GITHUB_ENV
 
